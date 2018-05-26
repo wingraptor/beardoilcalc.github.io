@@ -17,6 +17,6 @@ h1 {
   transition: visibility 0.5s, opacity 0.5s linear;
 } */
 
-.col__Step-Two--fadeIn {
+.col__Step-Two, .hidden {
   display:none;
 }

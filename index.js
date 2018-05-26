@@ -1,6 +1,6 @@
-var beardGrowthCards = document.querySelectorAll(".col__Step-One--fadeOut");
+var beardGrowthCards = document.querySelectorAll(".col__Step-One");
 var h1Changer = document.querySelector("h1");
-var productCards = document.querySelectorAll(".col__Step-Two--fadeIn");
+var productCards = document.querySelectorAll(".col__Step-Two");
 var stepOneCardId = "";
 var stepTwoCardId = "";
 var stepOneCardHTML = "";
@@ -21,8 +21,8 @@ for(var i = 0; i < beardGrowthCards.length; i++){
   h1 text */
 
 function stepOne(){
-  $(".col__Step-One--fadeOut").fadeOut(1000, function(){
-    $(".col__Step-Two--fadeIn").fadeIn(1000);
+  $(".col__Step-One").fadeOut(1000, function(){
+    $(".col__Step-Two").fadeIn(1000);
     h1Changer.textContent = "Step 2: Select Your Product"
   });
 // Adds event listeners to product cards
@@ -39,7 +39,7 @@ function stepOne(){
 
 function stepTwo(){
   h1Changer.textContent = "Read the Instructions Below!"
-  $(".col__Step-Two--fadeIn").fadeOut();
+  $(".col__Step-Two").fadeOut();
 }
 
 function stepThree(){
@@ -47,19 +47,22 @@ function stepThree(){
   var clickedProductCard = stepTwoCardId;
   var clickedBeardGrowthCardHTML = stepOneCardHTML;
   var clickedProductCardHTML = stepTwoCardHTML;
-  var startToOneMonth = "<div class = col><p>You need to use a surprisingly small amount of beard oil on each application to see results; consistency is much more important. Most guys will only have to use 6 drops of oil per application per day.</p></col>"
-  var OnetoThreeMonths = ""
-  var FourToTwelveMonths = ""
-  var caveMan = ""
   // Only execute code in function when Page 3 has been loaded; when Read the Instructions Below! is the heading on page.
   if(h1Changer.textContent === "Read the Instructions Below!"){
-    //The below is to evualate customer who clicked on beardGrower
-    if(clickedProductCard === "beardGrower"){
-      switch(clickedBeardGrowthCard){
-        case "one":
-        $(".row__top").append(clickedBeardGrowthCardHTML, startToOneMonth, clickedProductCardHTML);
-        break;
-      }
+    //The below returns appropriate elements depending on elements clicked on stepOne and stepTwo
+    switch(clickedBeardGrowthCard){
+      case "one":
+      $(".row__top").append(clickedBeardGrowthCardHTML, $("#oneMonth").html(), clickedProductCardHTML);
+      break;
+      case "two":
+      $(".row__top").append(clickedBeardGrowthCardHTML, $("#threeMonths").html(), clickedProductCardHTML);
+      break;
+      case "three":
+      $(".row__top").append(clickedBeardGrowthCardHTML, $("#twelveMonths").html(), clickedProductCardHTML);
+      break;
+      case "four":
+      $(".row__top").append(clickedBeardGrowthCardHTML, $("#caveman").html(), clickedProductCardHTML);
+      break;
     }
   }
 }
