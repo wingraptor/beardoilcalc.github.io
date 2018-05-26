@@ -1,0 +1,22 @@
+.navbar{
+       margin-bottom: 5%;
+   }
+
+h1 {
+  text-align: center
+}
+
+.heading__top{
+  margin-bottom: 10%;
+}
+
+/* The declaration below fades outs elements with that class; the fade does not cause element to be removed and thus it just disappears*/
+/* .step-one__card--disappear{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+} */
+
+.col__Step-Two--fadeIn {
+  display:none;
+}
