@@ -1,44 +1,55 @@
-var beardGrowthCards = document.querySelectorAll(".col__Step-One");
 var h1Changer = document.querySelector("h1");
-var productCards = document.querySelectorAll(".col__Step-Two");
 var stepOneCardId = "";
 var stepTwoCardId = "";
 var stepOneCardHTML = "";
 var stepTwoCardHTML = "";
+var numberOfDrops = "";
 
-// Loop below adds event listeners to beardGrowthCards
-for(var i = 0; i < beardGrowthCards.length; i++){
-  beardGrowthCards[i].addEventListener("click", function(){
+
+/* Event bound to beardGrowthCards on Page 1; handler can only be triggered once per click as the
+  handler is unbound on click */
+
+$(".col__Step-One").on( "click", function(){
+    $(".col__Step-One").off("click");
     stepOne();
     stepOneCardId = this.getAttribute("id");
     var stepOneCard = document.getElementById(stepOneCardId);
     stepOneCardHTML = stepOneCard.outerHTML;
     stepThree();
   });
-}
 
-/*function below fades out container containing beardGrowthCards then fades in productCards and changes
-  h1 text */
+
+/*function below fades out container containing beardGrowthCards then fades in productCards, changes
+  h1 text  then calls stepTwoBinder*/
 
 function stepOne(){
-  $(".col__Step-One").fadeOut(1000, function(){
-    $(".col__Step-Two").fadeIn(1000);
-    h1Changer.textContent = "Step 2: Select Your Product"
+  $(".col__Step-One").fadeOut(500, function(){
+    $(".col__Step-Two").fadeIn(500);
+    h1Changer.textContent = "Step 2: Select Your Product";
   });
-// Adds event listeners to product cards
-  for(var i = 0; i < productCards.length; i++){
-    productCards[i].addEventListener("click", function(){
+  stepTwoBinder();
+}
+
+  /* Event bound to beardGrowthCards on Page 1; handler can only be triggered once per click as the
+    handler is unbound on click */
+
+  function stepTwoBinder(){
+    $(".col__Step-Two").on("click", function(){
+      $(".col__Step-Two").off("click");
       stepTwo();
       stepTwoCardId = this.getAttribute("id");
       var stepTwoCard = document.getElementById(stepTwoCardId);
       stepTwoCardHTML = stepTwoCard.outerHTML;
+      console.log(stepTwoCardHTML);
       stepThree();
     });
   }
-}
+
+
+
 
 function stepTwo(){
-  h1Changer.textContent = "Read the Instructions Below!"
+  h1Changer.textContent = "Read the Instructions Below!";
   $(".col__Step-Two").fadeOut();
 }
 
