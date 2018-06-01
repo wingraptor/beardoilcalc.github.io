@@ -40,16 +40,28 @@ function stepOne(){
       stepTwoCardId = this.getAttribute("id");
       var stepTwoCard = document.getElementById(stepTwoCardId);
       stepTwoCardHTML = stepTwoCard.outerHTML;
-      console.log(stepTwoCardHTML);
       stepThree();
     });
   }
 
 
-
-
 function stepTwo(){
-  h1Changer.textContent = "Read the Instructions Below!";
+  var clickedBeardGrowthCard = stepOneCardId;
+  switch(clickedBeardGrowthCard){
+    case "one":
+      numberOfDrops = "3-4"
+      break;
+    case "two":
+      numberOfDrops = "4-6"
+      break;
+    case "three":
+      numberOfDrops = "7-10"
+      break;
+    case "four":
+      numberOfDrops = "10+"
+      break;
+  }
+  h1Changer.textContent = "Recommended Number of Drops: " + numberOfDrops + " drops";
   $(".col__Step-Two").fadeOut();
 }
 
@@ -59,21 +71,21 @@ function stepThree(){
   var clickedBeardGrowthCardHTML = stepOneCardHTML;
   var clickedProductCardHTML = stepTwoCardHTML;
   // Only execute code in function when Page 3 has been loaded; when Read the Instructions Below! is the heading on page.
-  if(h1Changer.textContent === "Read the Instructions Below!"){
+  if(h1Changer.textContent === "Recommended Number of Drops: " + numberOfDrops + " drops"){
     //The below returns appropriate elements depending on elements clicked on stepOne and stepTwo
     switch(clickedBeardGrowthCard){
       case "one":
-      $(".row__top").append(clickedBeardGrowthCardHTML, $("#oneMonth").html(), clickedProductCardHTML);
-      break;
+        $(".row__top").append(clickedBeardGrowthCardHTML, $("#oneMonth").html(), clickedProductCardHTML);
+        break;
       case "two":
-      $(".row__top").append(clickedBeardGrowthCardHTML, $("#threeMonths").html(), clickedProductCardHTML);
-      break;
+        $(".row__top").append(clickedBeardGrowthCardHTML, $("#threeMonths").html(), clickedProductCardHTML);
+        break;
       case "three":
-      $(".row__top").append(clickedBeardGrowthCardHTML, $("#twelveMonths").html(), clickedProductCardHTML);
-      break;
+        $(".row__top").append(clickedBeardGrowthCardHTML, $("#twelveMonths").html(), clickedProductCardHTML);
+        break;
       case "four":
-      $(".row__top").append(clickedBeardGrowthCardHTML, $("#caveman").html(), clickedProductCardHTML);
-      break;
+        $(".row__top").append(clickedBeardGrowthCardHTML, $("#caveman").html(), clickedProductCardHTML);
+        break;
     }
   }
 }
