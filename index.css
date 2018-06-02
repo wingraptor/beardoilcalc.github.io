@@ -1,13 +1,32 @@
-.navbar{
-       margin-bottom: 5%;
-   }
+body{
+  background-color: #000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
 
-h1 {
+h1, .card-body {
   text-align: center
+}
+
+h1, h5{
+  font-weight:700;
+}
+
+.navbar{
+  margin-bottom: 5%;
+  background-color: #191c1b;
+}
+
+.navbar-brand{
+  margin: 0 auto;
 }
 
 .heading__top{
   margin-bottom: 10%;
+}
+
+.heading__top--highlight{
+  color:#00b490;
 }
 
 /* The declaration below fades outs elements with that class; the fade does not cause element to be removed and thus it just disappears*/
@@ -19,4 +38,26 @@ h1 {
 
 .col__Step-Two, .hidden {
   display:none;
+}
+
+.card-body{
+  background-color: #00b490;
+  border-color: lightgrey;
+  border-width: 2.5px;
+}
+
+
+.img__beardGrowth{
+  background-color: #CCCCCC;
+  padding:10px;
+}
+
+.btn-primary{
+  background-color:black;
+  margin: 0 auto;
+}
+
+.btn-primary:hover{
+  background-color:#CCCCCC;
+  color:black;
 }
