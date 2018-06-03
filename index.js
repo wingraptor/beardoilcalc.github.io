@@ -11,6 +11,7 @@ var isFaded = true;
 
 $(".col__Step-One").on( "click", function(){
     $(".col__Step-One").off("click");
+    window.scrollTo(top);
     stepOne();
     stepOneCardId = this.getAttribute("id");
     var stepOneCard = document.getElementById(stepOneCardId);
@@ -41,6 +42,7 @@ function stepOne(){
   function stepTwoBinder(){
     $(".col__Step-Two").on("click", function(){
       $(".col__Step-Two").off("click");
+      window.scrollTo(top);
       stepTwo();
       stepTwoCardId = this.getAttribute("id");
       var stepTwoCard = document.getElementById(stepTwoCardId);
