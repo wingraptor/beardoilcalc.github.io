@@ -24,6 +24,8 @@ $(".col__Step-One").on( "click", function(){
 
 function stepOne(){
   $(".col__Step-One").fadeOut(500, function(){
+    /*Conditional below ensures that the fadeOut function is only called once before callback function is executed.
+    fadeOut function calls the callback function once per specified element */
     if(isFaded === true){
       $(".col__Step-Two").fadeIn(500);
       h1Changer.innerHTML = "<a href=\"index.html\"><i class=\"far fa-arrow-alt-circle-left\"></i></a><span class=\"heading__top--highlight\">Step 2:</span> Select Your Product";
@@ -43,6 +45,8 @@ function stepOne(){
       stepTwoCardId = this.getAttribute("id");
       var stepTwoCard = document.getElementById(stepTwoCardId);
       stepTwoCardHTML = stepTwoCard.outerHTML;
+      /*Conditional below ensures that the fadeOut function is only called once before callback function is executed.
+      fadeOut function calls the callback function once per specified element */
       $(".col__Step-Two").fadeOut(500, function(){
         if(isFaded === false){
           stepThree();

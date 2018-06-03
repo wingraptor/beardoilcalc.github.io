@@ -23,7 +23,7 @@ a:hover{
 
 .fa-arrow-alt-circle-left{
   font-size: 40px;
-  margin-right: 100px;
+  margin-right: 10%;
 }
 
 .navbar{
@@ -78,6 +78,12 @@ a:hover{
 /* Media Queries */
 @media only screen and (max-width: 1272px){
   #four {max-width: 100%;}
+}
+
+/* Adjusts size of image on smaller screensizes such that it does not collide with edge of screen causing the navbar to reduce in width and show color of page body instead */
+@media only screen and (max-width: 416px){
+  .logo {width: 75%;}
+  .logo {margin-left: 15%;}
 }
 
 @media only screen and (min-width: 953px){
