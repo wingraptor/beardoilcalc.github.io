@@ -11,7 +11,10 @@ var isFaded = true;
 
 $(".col__Step-One").on( "click", function(){
     $(".col__Step-One").off("click");
-    window.scrollTo(top);
+    window.scrollTo({
+        top: 1000,
+        behavior: "smooth"
+    });
     stepOne();
     stepOneCardId = this.getAttribute("id");
     var stepOneCard = document.getElementById(stepOneCardId);
@@ -42,7 +45,10 @@ function stepOne(){
   function stepTwoBinder(){
     $(".col__Step-Two").on("click", function(){
       $(".col__Step-Two").off("click");
-      window.scrollTo(top);
+      window.scrollTo({
+          top: 1000,
+          behavior: "smooth"
+      });
       stepTwo();
       stepTwoCardId = this.getAttribute("id");
       var stepTwoCard = document.getElementById(stepTwoCardId);
