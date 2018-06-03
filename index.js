@@ -12,7 +12,7 @@ var isFaded = true;
 $(".col__Step-One").on( "click", function(){
     $(".col__Step-One").off("click");
     window.scrollTo({
-        top: 1000,
+        top: 0,
         behavior: "smooth"
     });
     stepOne();
@@ -46,7 +46,7 @@ function stepOne(){
     $(".col__Step-Two").on("click", function(){
       $(".col__Step-Two").off("click");
       window.scrollTo({
-          top: 1000,
+          top: 0,
           behavior: "smooth"
       });
       stepTwo();
