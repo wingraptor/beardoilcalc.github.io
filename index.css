@@ -54,10 +54,17 @@ a:hover{
   display:none;
 }
 
+
+.card-img-top{
+  cursor: pointer;
+}
+
+
 .card-body{
   background-color: #00b490;
   border-color: lightgrey;
   border-width: 2.5px;
+  cursor: pointer;
 }
 
 .img__beardGrowth{
